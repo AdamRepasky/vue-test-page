@@ -1,12 +1,12 @@
 import random
 
-def funct():
+def funct(_id):
     c = 2000
     arrFinal = []
     arrRanges = []
     d = {
         "name": "chartData",
-        "id": 1,
+        "id": _id,
         "final values": arrFinal,
         "ranges": arrRanges
     }
@@ -34,7 +34,17 @@ def generateFiles(amount):
     for i in range(1, amount + 1):
         filePath = "chartData" + str(i) + ".json"
         file = open(filePath, "w")
-        file.write(str(funct()))
+        file.write(str(funct(i)))
         file.close()
     print("done")
+def generateBigFile(amount):
+    filePath = "chartBigData.json"
+    file = open(filePath, "w")
+    d = {}
+    for i in range(amount):
+        d[i] = funct(i + i)
+    file.write(str(d))
+    file.close()
+    print("done")
 generateFiles(5)
+generateBigFile(5)
