@@ -46,4 +46,4 @@ def generateBigFile(amount):
     file.close()
     print("done")
 #generateFiles(5)
-generateBigFile(5)
+generateBigFile(3)
