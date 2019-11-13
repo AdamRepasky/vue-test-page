@@ -42,9 +42,9 @@ def generateBigFile(amount):
     file = open(filePath, "w")
     d = {}
     for i in range(amount):
-        d[i] = funct(i + i)
+        d[i] = funct(i + 1)
     file.write(str(d))
     file.close()
     print("done")
-generateFiles(5)
+#generateFiles(5)
 generateBigFile(5)
